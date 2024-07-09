@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
-import { Message, setMessage } from "./Message/Message";
-import { NonConnector } from "./Message/Block/Non-Connector/Non-Connector";
-import { And, Or } from "./Message/Block/Connector/Conjunction";
+import { Message, setMessage } from "../Message/Message";
+import { NonConnector } from "../Message/Block/Non-Connector/Non-Connector";
+import { And, Or } from "../Message/Block/Connector/Conjunction";
 
 test("Length", () => {
     expect((

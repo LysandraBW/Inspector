@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
-import inspect from "./Inspect/Inspect.ts";
-import { inValues, isName } from "./Inspect/Inspectors.ts";
+import inspect from "../Inspect/Inspect";
+import { inValues, isName } from "../Inspect/Inspectors";
 
 test("Failed Inspection: Is Name", async () => {
     const inspector = isName();

@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
-import { setMessage } from "./Message/Message";
-import { Or } from "./Message/Block/Connector/Conjunction";
-import { toRelativeClause, thirdPersonSingularVerb, connectClauses } from "./Message/Grammar";
+import { setMessage } from "../Message/Message";
+import { Or } from "../Message/Block/Connector/Conjunction";
+import { toRelativeClause, thirdPersonSingularVerb, connectClauses } from "../Message/Grammar";
 
 test("Third Person Singular Verb", () => {
     expect(thirdPersonSingularVerb("have")).toBe("has");

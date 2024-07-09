@@ -1,7 +1,7 @@
 import { test, expect } from "vitest";
-import { setMessage } from "./Message/Message";
-import { And, Or } from "./Message/Block/Connector/Conjunction";
-import { sharedDepth, merge, mergeLikeMessages, mergeUnlikeMessages, mergeIndex, mergeGroup } from "./Message/Merger";
+import { setMessage } from "../Message/Message";
+import { And, Or } from "../Message/Block/Connector/Conjunction";
+import { sharedDepth, merge, mergeLikeMessages, mergeUnlikeMessages, mergeIndex, mergeGroup } from "../Message/Merger";
 
 test("Shared Upper Depth", () => {
     const m1 = setMessage("Descriptive", ["Must", "", "have", "A"]);

@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
-import { Message, setMessage } from "./Message/Message";
-import { bulletize, bulletPoints } from "./Message/Bullet";
-import { And, Or, Xor } from "./Message/Block/Connector/Conjunction";
+import { Message, setMessage } from "../Message/Message";
+import { bulletize, bulletPoints } from "../Message/Bullet";
+import { And, Or, Xor } from "../Message/Block/Connector/Conjunction";
 
 test("Bullet Points", () => {
     const A = setMessage("", ["Must", "not", "have", "numbers"]).toString();
