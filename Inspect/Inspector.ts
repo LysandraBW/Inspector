@@ -8,7 +8,7 @@ export default class Inspector {
     outputType: OutputType;
     optional: boolean;
 
-    constructor(inspection: Inspection, outputType: OutputType, optional: boolean = false) {
+    constructor(inspection: Inspection, outputType: OutputType = "Message", optional: boolean = false) {
         this.inspection = inspection;
         this.outputType = outputType;
         this.optional = optional;

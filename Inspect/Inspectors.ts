@@ -14,6 +14,7 @@ export const isName = (inspectorData: InspectorData = {
 }): Inspector => {
     return new Inspector(
         And([
+            T.hasValue(["Must", "", "enter", "a name"]),
             T.noNumbers(), 
             T.noSymbols()
         ], "Or"),
@@ -127,4 +128,50 @@ export const inValues = (inspectorData: InspectorData = {
         inspectorData.outputType || "Message",
         inspectorData.optional || false   
     )
+}
+
+export const isUniqueIdentifier = (inspectorData: InspectorData = {
+    length: 36,
+    optional: false,
+    outputType: "Message"
+}): Inspector => {
+    return new Inspector(
+        And([T.hasLength(inspectorData.length, ['Must', 'have', '', `${inspectorData.length} characters`])]),
+        inspectorData.outputType || "Message",
+        inspectorData.otpional || false
+    );
+}
+
+export const isDateTime = (inspectorData: InspectorData = {
+    optional: false, 
+    outputType: "Message"
+}): Inspector => {
+    return new Inspector(
+        And([T.isDateTime()]),
+        inspectorData.outputType || "Message",
+        inspectorData.otpional || false
+    );
+}
+
+export const isNumber = (inspectorData: InspectorData = {
+    optional: false,
+    outputType: "Message"
+}): Inspector => {
+    return new Inspector(
+        And([T.isNumber()]),
+        inspectorData.outputType || "Message",
+        inspectorData.otpional || false
+    );
+}
+
+export const every = (inspectorData: InspectorData = {
+    callback: (v: any) => Promise<boolean>,
+    optional: false,
+    outputType: "Message"
+}): Inspector => {
+    return new Inspector(
+        And([T.isNumber()]),
+        inspectorData.outputType || "Message",
+        inspectorData.otpional || false
+    );
 }
