@@ -2,6 +2,8 @@ import { bulletize } from "../Message/Bullet";
 import { Inspection } from "./Inspection/Inspection";
 
 type OutputType = "Message" | "Bullet";
+export type InspectionMessageOutput = [boolean, string?];
+export type InspectionBulletOutput = [boolean, Array<[string, string]>];
 
 export default class Inspector {
     inspection: Inspection;
