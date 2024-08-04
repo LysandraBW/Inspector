@@ -66,7 +66,7 @@ export const isVIN = (inspectorData: InspectorData = {
 }
 
 export const isLicensePlate = (inspectorData: InspectorData = {
-    optional: false, 
+    optional: true, 
     outputType: "Message"
 }): Inspector => {
     return new Inspector(
@@ -138,7 +138,7 @@ export const isUniqueIdentifier = (inspectorData: InspectorData = {
     return new Inspector(
         And([T.hasLength(inspectorData.length, ['Must', 'have', '', `${inspectorData.length} characters`])]),
         inspectorData.outputType || "Message",
-        inspectorData.otpional || false
+        inspectorData.optional || false
     );
 }
 
@@ -149,7 +149,7 @@ export const isDateTime = (inspectorData: InspectorData = {
     return new Inspector(
         And([T.isDateTime()]),
         inspectorData.outputType || "Message",
-        inspectorData.otpional || false
+        inspectorData.optional || false
     );
 }
 
@@ -160,7 +160,7 @@ export const isNumber = (inspectorData: InspectorData = {
     return new Inspector(
         And([T.isNumber()]),
         inspectorData.outputType || "Message",
-        inspectorData.otpional || false
+        inspectorData.optional || false
     );
 }
 
@@ -170,8 +170,8 @@ export const every = (inspectorData: InspectorData = {
     outputType: "Message"
 }): Inspector => {
     return new Inspector(
-        And([T.isNumber()]),
+        And([T.every(inspectorData.callback)]),
         inspectorData.outputType || "Message",
-        inspectorData.otpional || false
+        inspectorData.optional || false
     );
 }
